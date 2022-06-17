@@ -15,9 +15,103 @@
  * with this program. If not, see https://opensource.org/licenses/AGPL-3.0.
  *
  */
+import {get, put} from "./utils/memcache.js";
+import {putToCache, getValueFromCache} from "./cache.js";
 
-function helloWorld(name) {
-    return "Hello World " + name;
+console.log("calling get main");
+//get();
+console.log("calling set main");
+//put();
+console.log("calling get main");
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export default helloWorld;
+async function demo() {
+    const start = process.hrtime();
+    const numRequests = 1000000;
+    let numResponses = 0;
+    setInterval(() => {
+        console.log("tps: ", numResponses);
+        numResponses = 0;
+    }, 1000);
+
+    for (let j = 0; j < numRequests; j++) {
+        get().then(() => {
+            numResponses++;
+        });
+    }
+}
+
+//demo();
+
+async function demoSerial() {
+    const start = process.hrtime();
+    const numRequests = 1000000;
+    let numResponses = 0;
+    setInterval(() => {
+        console.log("tps: ", numResponses);
+        numResponses = 0;
+    }, 1000);
+
+    for (let j = 0; j < numRequests; j++) {
+        let promises = [];
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        promises.push(get());
+        await Promise.all(promises);
+        numResponses += 10;
+    }
+
+    // const stop = process.hrtime(start);
+    // const totalTime = (stop[0] * 1e9 + stop[1]) / 1e9;
+    // const tps = numberOfGets/totalTime;
+    //
+    // console.log(`Done tps ${tps} Total time is ${totalTime} seconds`);
+}
+
+
+//demoSerial();
+async function demoLib() {
+    await putToCache('Charly', 'Abraham', 1000);
+    const numRequests = 1000;
+    let numResponses = 0;
+    for (let j = 0; j < numRequests; j++) {
+        let promises = [];
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+        promises.push(getValueFromCache(`Charly`));
+
+        await Promise.all(promises);
+        try {
+            const value = await getValueFromCache(`Charly`);
+            console.log(value);
+        } catch (e){
+            console.error(e);
+        }
+
+
+        // eslint-disable-next-line no-unused-vars
+        numResponses += 10;
+    }
+
+}
+
+demoLib();
+
+

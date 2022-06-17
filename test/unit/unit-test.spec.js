@@ -17,13 +17,13 @@ import * as chai from 'chai';
 
 let expect = chai.expect;
 
-describe('unit Tests', function() {
-    it('should return Hello World', function() {
+describe('unit Tests', function () {
+    it('should return Hello World', function () {
         expect(helloWorld('yo')).to.equal('Hello World yo');
     });
 
-    describe('#indexOf()', function() {
-        it('should return -1 when the value is not present', function() {
+    describe('#indexOf()', function () {
+        it('should return -1 when the value is not present', function () {
             expect([1, 2, 3].indexOf(4)).to.equal(-1);
             assert.equal([1, 2, 3].indexOf(4), -1); // or this, but prefer the above syntax
         });

@@ -1,9 +1,9 @@
 name: Comment on pull request post pull request auto review
 # depends on and only executes after pull_request_processor.yml is complete
 
-on: 
+on:
   workflow_run:
-    workflows: ["Checking CLA Signature"]
+    workflows: [ "Checking CLA Signature" ]
     types:
       - completed
 
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [ 3.8 ]
     if: >
       ${{ github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' }}
@@ -49,7 +49,7 @@ jobs:
           ls
           unzip pr.zip
           cat ./comment
-      
+
       - name: 'Comment on Current Pull Request'
         uses: actions/github-script@v3
         with:
