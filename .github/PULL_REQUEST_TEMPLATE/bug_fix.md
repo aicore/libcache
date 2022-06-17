@@ -6,10 +6,11 @@ labels: ''
 assignees: ''
 
 ---
+
 # Description
 
-* Please include a summary of the change. 
-* Please also include relevant motivation and context. 
+* Please include a summary of the change.
+* Please also include relevant motivation and context.
 * List any dependencies that are required for this change.
 
 Addresses issues #(issue)
@@ -22,13 +23,14 @@ Addresses issues #(issue)
 - [ ] This change requires a documentation update
 
 # Sample Input and output
+
 * Provide screenshots or videos.
 * Or provide Input output if run on text terminal.
 
 # How Has This Been Tested?
 
-* Please describe the tests that you ran to verify your changes. 
-* Provide instructions so we can reproduce. 
+* Please describe the tests that you ran to verify your changes.
+* Provide instructions so we can reproduce.
 * Please also list any relevant details for your test configuration
 
 
@@ -36,6 +38,7 @@ Addresses issues #(issue)
 - [ ] Test B
 
 **Test Configuration**:
+
 * Firmware version:
 * Hardware:
 * Toolchain:

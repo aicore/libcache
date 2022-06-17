@@ -3,11 +3,19 @@
     "config:base"
   ],
   "timezone": "Asia/Calcutta",
-  "schedule": ["before 3am on the first day of the month"],
+  "schedule": [
+    "before 3am on the first day of the month"
+  ],
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies", "dependencies"],
-      "matchUpdateTypes": ["patch", "minor"],
+      "matchDepTypes": [
+        "devDependencies",
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "groupName": "dependencies"
     }
   ]

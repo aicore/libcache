@@ -53,5 +53,7 @@
     "husky": "7.0.4",
     "mocha": "9.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "memjs": "^1.3.0"
+  }
 }
