@@ -22,10 +22,4 @@ describe('unit Tests', function () {
         expect(helloWorld('yo')).to.equal('Hello World yo');
     });
 
-    describe('#indexOf()', function () {
-        it('should return -1 when the value is not present', function () {
-            expect([1, 2, 3].indexOf(4)).to.equal(-1);
-            assert.equal([1, 2, 3].indexOf(4), -1); // or this, but prefer the above syntax
-        });
-    });
 });

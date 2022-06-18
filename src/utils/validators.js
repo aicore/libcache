@@ -2,7 +2,7 @@ import {isNumber, isString} from "./common.js";
 
 /** This is a description of the put value function.
  *  This function helps to put value to MemCache
- * @param {String} key - key for which we need to put value
+ * @param {{}} key - key for which we need to put value
  * @param  {Object} value - value to be put in MemCache
  * @param {Number} ttl - ttl value
  * @return {boolean}   true if all arguments are valid false otherwise

@@ -29,7 +29,7 @@ const client = memjs.Client.create();
  * @return {Promise}  resolve promise to get return value
  *
  **/
-export function get(key) {
+export async function get(key) {
     return new Promise((resolve, reject) => {
         if (!isString(key)) {
             reject(`Provide valid key`);
