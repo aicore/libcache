@@ -4,7 +4,10 @@
  * @return {boolean}  - true if it is a string false otherwise
  * */
 export function isString(str) {
-    return str && (typeof str === 'string' || str instanceof String);
+    if (str == null) {
+        return false;
+    }
+    return (typeof str === 'string' || str instanceof String);
 }
 
 /** This is a description of the isNumber function.
@@ -14,5 +17,8 @@ export function isString(str) {
  * */
 
 export function isNumber(number) {
-    return number && (typeof number === 'number' || number instanceof Number);
+    if (number == null) {
+        return false;
+    }
+    return (typeof number === 'number' || number instanceof Number);
 }

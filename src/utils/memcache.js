@@ -29,18 +29,42 @@ const client = memjs.Client.create();
  * @return {Promise}  resolve promise to get return value
  *
  **/
-export function get(key) {
+export async function get(key) {
     return new Promise((resolve, reject) => {
         if (!isString(key)) {
             reject(`Provide valid key`);
             return;
         }
+        // noinspection JSIgnoredPromiseFromCall
         client.get(key, (err, val) => {
             if (err) {
                 reject(err);
                 return;
             }
             resolve(JSON.parse(val));
+        });
+    });
+}
+
+/** This is a description of the deleteKey function.
+ *  This function helps to delete key and value stored in MemCache
+ * @param {String} key - key to be deleted
+ * @return {Promise}  resolve promise to get return value
+ *
+ **/
+export function deleteKey(key) {
+    return new Promise((resolve, reject) => {
+        if (!isString(key)) {
+            reject(`Provide valid key`);
+            return;
+        }
+        // noinspection JSIgnoredPromiseFromCall
+        client.delete(key, (err, val) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(val);
         });
     });
 }
@@ -59,6 +83,7 @@ export function put(key, value, ttl) {
             reject(`Please provide valid parameters`);
             return;
         }
+        // noinspection JSIgnoredPromiseFromCall
         client.set(key, JSON.stringify(value), {expires: ttl}, (err, val) => {
             if (err) {
                 reject(err);

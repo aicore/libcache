@@ -1,7 +1,7 @@
 {
-  "name": "@aicore/template-nodejs",
+  "name": "@aicore/libcache",
   "version": "1.0.4",
-  "description": "Template for nodejs with unit gulp build, test, coverage, code guardian, github and Other defaults",
+  "description": "Cache library for core.ai services",
   "main": "index.js",
   "type": "module",
   "keywords": [
@@ -20,7 +20,7 @@
     "lint:fix": "eslint --quiet --fix src test",
     "prepare": "husky install",
     "test": "npm run test:unit && npm run test:integ",
-    "test:unit": "mocha test/unit/**/*.spec.js --timeout=3000",
+    "test:unit": "mocha test/unit/setup-mocks.js test/unit/**/*.spec.js --timeout=3000",
     "test:integ": "mocha test/integration/**/*.spec.js --timeout=3000",
     "printReportsLink": "echo Detailed unit test coverage report: file:///$(pwd)/coverage-unit/index.html && echo Detailed integration test coverage report: file:///$(pwd)/coverage-integration/index.html",
     "cover": "npm run cover:unit && npm run cover:integ",
@@ -29,7 +29,8 @@
     "build": "npm run cover",
     "bumpPatchVersion": "npm --no-git-tag-version version patch",
     "bumpPatchVersionWithGitTag": "npm version patch",
-    "release": "npm run bumpPatchVersionWithGitTag"
+    "release": "npm run bumpPatchVersionWithGitTag",
+    "start" : "MEMCACHIER_SERVERS=172.30.0.99  node src/index.js"
   },
   "files": [
     "src"
