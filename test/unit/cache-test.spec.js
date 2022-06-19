@@ -1,7 +1,7 @@
 /*global describe, it*/
 import mockedFunctions from './setup-mocks.js';
 import * as chai from 'chai';
-import {deleteKeyFromCache, getValueFromCache, putToCache} from "../../src/cache.js";
+import {closeCache, deleteKeyFromCache, getValueFromCache, putToCache} from "../../src/cache.js";
 
 let expect = chai.expect;
 
@@ -189,7 +189,7 @@ describe('This will test src/cache.js', function () {
             try {
                 await putToCache('hello', null, 1000);
             } catch (e) {
-                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string'+
+                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string' +
                     '  value is  null type of value is object. ttl is  1000 and typeof ttl is number');
                 isExceptionOccurred = true;
             }
@@ -202,7 +202,7 @@ describe('This will test src/cache.js', function () {
             try {
                 await putToCache('hello', 'world', "1000");
             } catch (e) {
-                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string'+
+                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string' +
                     '  value is  world type of value is string. ttl is  1000 and typeof ttl is string');
                 isExceptionOccurred = true;
             }
@@ -215,7 +215,7 @@ describe('This will test src/cache.js', function () {
             try {
                 await putToCache('hello', 'world', {});
             } catch (e) {
-                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string'+
+                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string' +
                     '  value is  world type of value is string. ttl is  [object Object] and typeof ttl is object');
                 isExceptionOccurred = true;
             }
@@ -228,10 +228,21 @@ describe('This will test src/cache.js', function () {
             try {
                 await putToCache('hello', 'world', true);
             } catch (e) {
-                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string'+
+                expect(e).to.eql('Please Verify parameters and its types. key is  hello and type of key is string' +
                     '  value is  world type of value is string. ttl is  true and typeof ttl is boolean');
                 isExceptionOccurred = true;
             }
             expect(isExceptionOccurred).to.eql(true);
         });
+    it('close connection to cache', function () {
+        mockedFunctions.memjs.client.close = function () {
+        };
+        let noError = true;
+        try {
+            closeCache();
+        } catch (e) {
+            noError = false;
+        }
+        expect(noError).to.eql(true);
+    });
 });

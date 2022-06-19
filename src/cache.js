@@ -1,4 +1,4 @@
-import {put, get, deleteKey} from './utils/memcache.js';
+import {put, get, deleteKey, close} from './utils/memcache.js';
 import {isString} from "./utils/common.js";
 import {isValidPutArguments} from "./utils/validators.js";
 
@@ -41,4 +41,11 @@ export async function deleteKeyFromCache(key) {
         return deleteKey(key);
     }
     return Promise.reject(`Please provide valid string as key`);
+}
+
+/** This function helps to close open cache
+ *
+ * */
+export function closeCache() {
+    close();
 }
