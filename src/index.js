@@ -15,3 +15,4 @@
  * with this program. If not, see https://opensource.org/licenses/AGPL-3.0.
  *
  */
+export {putToCache, getValueFromCache, deleteKeyFromCache, closeCache} from "./cache.js";
