@@ -13,7 +13,7 @@
 // remove integration tests if you don't have them.
 // jshint ignore: start
 /*global describe, it*/
-
+/*
 import helloWorld from "../../src/index.js";
 import * as assert from 'assert';
 import * as chai from 'chai';
@@ -32,3 +32,4 @@ describe('Integration: Hello world Tests', function () {
         });
     });
 });
+*/
