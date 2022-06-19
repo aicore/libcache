@@ -13,7 +13,9 @@ export async function putToCache(key, value, ttl) {
     if (isValidPutArguments(key, value, ttl)) {
         return put(key, value, ttl);
     }
-    return Promise.reject(`Please provide valid key ${key} valid value ${value} and ttl ${ttl}`);
+    return Promise.reject(`Please Verify parameters and its types. key is  ${key}` +
+        ` and type of key is ${typeof key}  value is  ${value} type of value is ${typeof value}.` +
+        ` ttl is  ${ttl} and typeof ttl is ${typeof ttl}`);
 }
 
 /** This is a description of the getValueFromCache function.
@@ -25,7 +27,7 @@ export async function getValueFromCache(key) {
     if (isString(key)) {
         return get(key);
     }
-    return Promise.reject(`Please provide valid  string as key`);
+    return Promise.reject(`Please provide valid string as key`);
 }
 
 /** This is a description of the getValueFromCache function.
