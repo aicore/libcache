@@ -94,3 +94,10 @@ export function put(key, value, ttl) {
     });
 }
 
+/** This function helps to close the connection
+ *
+ */
+export function close() {
+    client.close();
+}
+
