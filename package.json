@@ -31,8 +31,7 @@
     "build": "npm run cover",
     "bumpPatchVersion": "npm --no-git-tag-version version patch",
     "bumpPatchVersionWithGitTag": "npm version patch",
-    "release": "npm run bumpPatchVersionWithGitTag",
-    "start": "MEMCACHIER_SERVERS=172.30.0.99  node src/index.js"
+    "release": "npm run bumpPatchVersionWithGitTag"
   },
   "files": [
     "src"
