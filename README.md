@@ -11,6 +11,35 @@ Please set following environment variables before using this library in producti
     MEMCACHIER_PASSWORD - if present with MEMCACHIER_USERNAME, MemJS will try to authenticated to the server using SASL.
     MEMCACHE_USERNAME - used if MEMCACHIER_USERNAME is not present
     MEMCACHE_PASSWORD - used if MEMCACHIER_PASSWORD is not present
+```js
+// sample code on how to use library
+import  {putToCache, getValueFromCache, deleteKeyFromCache, closeCache} from '@aicore/libcache';
+const key = 'hello';
+const value = {
+  'name' : 'ram',
+  'age' : 100  
+};
+
+const ttl = 100; // in seconds
+try {
+    await putToCache(key, value, ttl);
+}catch (e){
+    console.error(e);
+}
+
+try {
+    await getValueFromCache(key);
+} catch (e){
+    console.error(e);
+}
+try {
+    await deleteKeyFromCache(key);
+} catch (e){
+    console.log(e);
+}
+// close cache client
+closeCache();
+```
 
 
 
