@@ -1,12 +1,17 @@
 import {isNumber, isString} from "./common.js";
 
+// @INCLUDE_IN_API_DOCS
+/**
+ * @module utils/validators
+ */
+
 /** This is a description of the put value function.
  *  This function helps to put value to MemCache
  * @param {{}} key - key for which we need to put value
  * @param  {Object} value - value to be put in MemCache
  * @param {Number} ttl - ttl value
  * @return {boolean}   true if all arguments are valid false otherwise
- *
+ * @type {function}
  **/
 export function isValidPutArguments(key, value, ttl) {
     if (!isString(key)) {
