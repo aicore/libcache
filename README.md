@@ -16,18 +16,18 @@ Please set following environment variables before using this library in producti
 
 ## Code Guardian
 
-[![<app> build verification](https://github.com/aicore/template-nodejs/actions/workflows/build_verify.yml/badge.svg)](https://github.com/aicore/template-nodejs/actions/workflows/build_verify.yml)
+[![<app> build verification](https://github.com/aicore/libcache/actions/workflows/build_verify.yml/badge.svg)](https://github.com/aicore/libcache/actions/workflows/build_verify.yml)
 
-<a href="https://sonarcloud.io/summary/new_code?id=aicore_template-nodejs-ts">
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=alert_status" alt="Sonar code quality check" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=security_rating" alt="Security rating" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=vulnerabilities" alt="vulnerabilities" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=coverage" alt="Code Coverage" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=bugs" alt="Code Bugs" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=reliability_rating" alt="Reliability Rating" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=sqale_rating" alt="Maintainability Rating" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=ncloc" alt="Lines of Code" />
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=sqale_index" alt="Technical debt" />
+<a href="https://sonarcloud.io/summary/new_code?id=aicore_libcache">
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=alert_status" alt="Sonar code quality check" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=security_rating" alt="Security rating" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=vulnerabilities" alt="vulnerabilities" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=coverage" alt="Code Coverage" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=bugs" alt="Code Bugs" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=reliability_rating" alt="Reliability Rating" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=sqale_rating" alt="Maintainability Rating" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=ncloc" alt="Lines of Code" />
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_libcache&metric=sqale_index" alt="Technical debt" />
 </a>
 
 # Commands available
