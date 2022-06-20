@@ -1,6 +1,6 @@
 {
   "name": "@aicore/libcache",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Cache library for core.ai services",
   "main": "src/index.js",
   "type": "module",
