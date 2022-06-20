@@ -1,9 +1,18 @@
-# template-nodejs
+# libcache
 
-A template project for nodejs. Has integrated linting, testing,
-coverage, reporting, GitHub actions for publishing to npm repository, dependency updates and other goodies.
+This library will be used for caching data in our internal services.
+## How to use Library
+We pass all configurations using environment variables. Following are environment variables available.
 
-Easily use this template to quick start a production ready nodejs project template.
+Please set following environment variables before using this library in production
+
+    MEMCACHIER_SERVERS - used to determine which servers to connect to. Should be a comma separated list of [hostname:port].
+    MEMCACHIER_USERNAME - if present with MEMCACHIER_PASSWORD, MemJS will try to authenticated to the server using SASL.
+    MEMCACHIER_PASSWORD - if present with MEMCACHIER_USERNAME, MemJS will try to authenticated to the server using SASL.
+    MEMCACHE_USERNAME - used if MEMCACHIER_USERNAME is not present
+    MEMCACHE_PASSWORD - used if MEMCACHIER_PASSWORD is not present
+
+
 
 ## Code Guardian
 
@@ -21,22 +30,10 @@ Easily use this template to quick start a production ready nodejs project templa
   <img src="https://sonarcloud.io/api/project_badges/measure?project=aicore_template-nodejs-ts&metric=sqale_index" alt="Technical debt" />
 </a>
 
-# TODOs after template use
-
-1. Update package.json with your app defaults
-2. Check Build actions on pull requests.
-3. In sonar cloud, enable Automatic analysis from `Administration
-   Analysis Method` for the first time before a pull request is
-   raised: ![image](https://user-images.githubusercontent.com/5336369/148695840-65585d04-5e59-450b-8794-54ca3c62b9fe.png)
-4. Check codacy runs on pull requests, set codacy defaults. You may remove codacy if sonar cloud is only needed.
-5. Update the above Code Guardian badges; change all `id=aicore_template-nodejs-ts` to the sonar id of your project
-   fields.
-
 # Commands available
 
 ## Building
-
-Since this is a pure JS template project, build command just runs test with coverage.
+We run integration tests on `Ubuntu`  so we recommend Ubuntu for building the packages.
 
 ```shell
 > npm install   // do this only once.
