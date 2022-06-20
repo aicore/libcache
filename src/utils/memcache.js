@@ -20,6 +20,10 @@ import memjs from 'memjs';
 import {isString} from "./common.js";
 import {isValidPutArguments} from "./validators.js";
 
+// @INCLUDE_IN_API_DOCS
+/**
+ * @module utils/memcache
+ */
 
 const client = memjs.Client.create();
 
@@ -27,7 +31,7 @@ const client = memjs.Client.create();
  *  This function helps to get value stored in MemCache
  * @param {String} key - key for which we need to get value
  * @return {Promise}  resolve promise to get return value
- *
+ * @type {function}
  **/
 export async function get(key) {
     return new Promise((resolve, reject) => {
@@ -50,7 +54,7 @@ export async function get(key) {
  *  This function helps to delete key and value stored in MemCache
  * @param {String} key - key to be deleted
  * @return {Promise}  resolve promise to get return value
- *
+ * @type {function}
  **/
 export function deleteKey(key) {
     return new Promise((resolve, reject) => {
@@ -75,7 +79,7 @@ export function deleteKey(key) {
  * @param  {Object} value - value to be put in MemCache
  * @param {Number} ttl - ttl value
  * @return {Promise}  resolve promise to get return value
- *
+ * @type {function}
  **/
 export function put(key, value, ttl) {
     return new Promise((resolve, reject) => {
@@ -95,7 +99,7 @@ export function put(key, value, ttl) {
 }
 
 /** This function helps to close the connection
- *
+ * @type {function}
  */
 export function close() {
     client.close();

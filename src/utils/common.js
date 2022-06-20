@@ -1,7 +1,13 @@
+// @INCLUDE_IN_API_DOCS
+/**
+ * @module utils/common
+ */
+
 /** This is a description of the isString function.
  *  This function checks if object is sting or not
  * @param {Object} str - Take any Object
  * @return {boolean}  - true if it is a string false otherwise
+ * @type {function}
  * */
 export function isString(str) {
     if (str == null) {
@@ -14,6 +20,7 @@ export function isString(str) {
  *  This function checks if object is Number or not
  * @param {Object} number - Take any Object
  * @return {boolean}  - true if it is a Number false otherwise
+ * @type {function}
  * */
 
 export function isNumber(number) {
