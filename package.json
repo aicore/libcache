@@ -32,7 +32,7 @@
     "build": "npm run cover && npm run createJSDocs && npm run vulnerabilityCheck",
     "bumpPatchVersion": "npm --no-git-tag-version version patch",
     "bumpPatchVersionWithGitTag": "npm version patch",
-    "createJSDocs": "node build/jsDocGenerate.cjs src docs/generatedApiDocs && git add docs",
+    "createJSDocs": "node build/jsDocGenerate.js src docs/generatedApiDocs && git add docs",
     "release": "npm run bumpPatchVersionWithGitTag"
   },
   "files": [
@@ -54,7 +54,7 @@
     "c8": "7.12.0",
     "chai": "4.3.6",
     "cli-color": "2.0.3",
-    "documentation": "13.2.5",
+    "documentation": "14.0.0",
     "eslint": "8.21.0",
     "glob": "8.0.3",
     "husky": "8.0.1",
